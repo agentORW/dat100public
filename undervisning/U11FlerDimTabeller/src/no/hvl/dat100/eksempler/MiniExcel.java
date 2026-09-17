@@ -33,19 +33,15 @@ public class MiniExcel {
 
 		// TODO - SUMMER RAD
 		
-		for (int r = 0; r<data.length-1; r++) {
-			
-			int[] rad = data[r];
-			
-			int sum = 0;
-			int sistepos = rad.length-1;
-			
-			for (int k = 0; k<sistepos; k++) {
-				sum = sum + rad[k];
+		for (int[] rad : data) {
+			int radLengde = rad.length;
+			int radSum = 0;
+
+			for (int v : rad) {
+				radSum += v;
 			}
-			
-			rad[sistepos] = sum;
-			
+
+			rad[radLengde-1] = radSum;
 		}
 		
 		// TODO - SUMMER KOLONNER
@@ -55,17 +51,16 @@ public class MiniExcel {
 		
 		int[] sisterad = data[sisteradpos];
 		
-		// TODO
+		// Vi går gjennom egentlig vanlig, men kolonne først og så rad, og legger til [rad][kolonne].
 		
 		for (int k = 0; k<radlengde; k++) {
-			
 			int sum = 0;
-			for (int r = 0; r<sisteradpos; r++) {	
-				sum = sum + data[r][k];
+
+			for (int r = 0; r<sisteradpos; r++) {
+				sum += data[r][k];
 			}
-			
+
 			sisterad[k] = sum;
-			
 		}
 		
 	}
