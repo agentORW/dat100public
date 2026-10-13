@@ -7,32 +7,39 @@ import java.util.Scanner;
 
 public class NavnSortering {
 	/* 
-	 * Har fil med navn pÂ filen "navn.txt". PÂ f¯rste linje finner 
+	 * Har fil med navn p√• filen "navn.txt". P√• f√∏rste linje finner
 	 * vi antall navn.
 	 * 
-	 * ÿnsker Â lese disse, sortere dem og skrive dem sortert til 
+	 * √ònsker √• lese disse, sortere dem og skrive dem sortert til
 	 * en ny fil, "sortert.txt".
 	 */
 	public static void main(String[] args) throws Exception {
+
+		//lager scanner
 		File innfil = new File("navn.txt");
 		Scanner leser = new Scanner(innfil);
-		
+
+		// Leser tallet p√• f√∏rste linje, antall navn
 		int antNavn = Integer.parseInt(leser.nextLine());
+
+		// lager tabell for navn
 		String[] navnTab = new String[antNavn];
-		
+
 		for (int i = 0; i < antNavn; i++) {
 			navnTab[i] = leser.nextLine();
 		}
+
 		leser.close();
-		
+
 		Arrays.sort(navnTab);
-		
-		File utfil = new File("sortert.txt");
+
+		File utfil = new File("sortert_navn.txt");
 		PrintWriter skriver = new PrintWriter(utfil);
-		
+
 		for (String navn : navnTab) {
 			skriver.println(navn);
 		}
+
 		skriver.close();
 	}
 

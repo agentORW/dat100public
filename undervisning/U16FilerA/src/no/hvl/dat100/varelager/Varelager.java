@@ -5,10 +5,10 @@ import java.util.Scanner;
 
 
 /*
- * Lese data frå fil inn i eit varelager. Sjå filformat.
- * Ukjent antall lihjer på filen.
+ * Lese data fra fil inn i eit varelager. Sjï¿½ filformat.
+ * Ukjent antall lihjer pÃ¥ filen.
  * 
- * Metode for å søke etter vare der navnet inneholder en gitt streng
+ * Metode for Ã¥ sï¿½ke etter vare der navnet inneholder en gitt streng
  */
 public class Varelager {
 
